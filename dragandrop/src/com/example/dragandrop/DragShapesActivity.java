@@ -12,7 +12,7 @@ import android.view.View.OnDragListener;
 import android.view.View.OnTouchListener;
 import android.widget.LinearLayout;
 
-public class MainActivity extends Activity implements OnTouchListener, OnDragListener {
+public class DragShapesActivity extends Activity implements OnTouchListener, OnDragListener {
 	
 	View left;
 	View layoutCuadrado;
@@ -23,14 +23,14 @@ public class MainActivity extends Activity implements OnTouchListener, OnDragLis
 	boolean containsDragableTriangulo = false;
 	boolean containsDragableCirculo = false;;
 	
-	MainActivity context = null;
+	DragShapesActivity context = null;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.drag_shapes);
 		
-		context = MainActivity.this;
+		context = DragShapesActivity.this;
 		
 	    findViewById(R.id.imagen_cuadrado).setOnTouchListener(this);
 		findViewById(R.id.imagen_triangulo).setOnTouchListener(this);	    
@@ -116,8 +116,8 @@ public class MainActivity extends Activity implements OnTouchListener, OnDragLis
 			findViewById(R.id.right).setBackground(normalShape);
 			
 			v.setBackground(enterShape);
-			v.addView(dragView);
-			v.setGravity(Gravity.CENTER);
+			//v.addView(dragView);
+			//v.setGravity(Gravity.CENTER);
 		}
 	}
 
